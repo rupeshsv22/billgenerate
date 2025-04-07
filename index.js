@@ -59,7 +59,7 @@ cron.schedule('* * * * *', () => {
   
 const upload = multer({ storage });
 
-app.use(express.static('public'));
+app.use(express.static('docs'));
 
 app.post('/upload', upload.single('excel'), async (req, res) => {
   const filePath = req.file.path;
